@@ -17,8 +17,18 @@ def minSplit(amount):
 
 # 2. დაწერეთ ფუნქცია რომელიც დააჯამებს ციფრებს ორ რიცსხვს შორის.
 
+def sum_digits(n):
+    sum = 0
+    while n:
+        sum += n % 10
+        n //= 10
+    return sum
+
 def sumOfDigits(start, end):
-    return int((end - start + 1) * (start + end) / 2)
+    sum = 0
+    for i in range(start,end+1):
+        sum += sum_digits(i)
+    return sum
 
 
 # 3. მოცემულია String რომელიც შედგება „(" და „)" ელემენტებისგან.
